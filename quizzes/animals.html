@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Quiz</title>
+    <link rel="stylesheet" href="../assets/style/quiz.css">
+    <link rel="icon" href="../assets/img/pawprint.png">
+    <script>
+        var questionList = [
+    {
+        "question": "Which animal is known as the King of the Jungle?",
+        "answers": [
+            "Lion",
+            "Tiger",
+            "Owl",
+            "Goat"
+        ],
+        "correct": "Lion"
+    },
+    {
+        "question": "Which animal has a very long neck?",
+        "answers": [
+            "Kangaroo",
+            "Camel",
+            "Flamingo",
+            "Giraffe"
+        ],
+        "correct": "Giraffe"
+    },
+    {
+        "question": "Which animal is the largest land animal?",
+        "answers": [
+            "Octopus",
+            "Elephant",
+            "Giraffe",
+            "Crocodile"
+        ],
+        "correct": "Elephant"
+    },
+    {
+        "question": "Which bird cannot fly but can swim?",
+        "answers": [
+            "Penguin",
+            "Owl",
+            "Falcon",
+            "Flamingo"
+        ],
+        "correct": "Penguin"
+    },
+    {
+        "question": "Which animal is famous for carrying its baby in a pouch?",
+        "answers": [
+            "Octopus",
+            "Crocodile",
+            "Kangaroo",
+            "Eagle"
+        ],
+        "correct": "Kangaroo"
+    },
+    {
+        "question": "Which animal is known for its black and white stripes?",
+        "answers": [
+            "Tiger",
+            "Snake",
+            "Zebra",
+            "Penguin"
+        ],
+        "correct": "Zebra"
+    },
+    {
+        "question": "Which is the fastest land animal?",
+        "answers": [
+            "Tiger",
+            "Sheep",
+            "Dog",
+            "Cheetah"
+        ],
+        "correct": "Cheetah"
+    },
+    {
+        "question": "Which animal is known as man's best friend?",
+        "answers": [
+            "Flamingo",
+            "Dog",
+            "Goat",
+            "Monkey"
+        ],
+        "correct": "Dog"
+    },
+    {
+        "question": "Which mammal can fly?",
+        "answers": [
+            "Bat",
+            "Owl",
+            "Parrot",
+            "Eagle"
+        ],
+        "correct": "Bat"
+    },
+    {
+        "question": "Which animal changes its color to blend into its surroundings?",
+        "answers": [
+            "Platypus",
+            "Chameleon",
+            "Rhinoceros",
+            "Turtle"
+        ],
+        "correct": "Chameleon"
+    },
+    {
+        "question": "Which is the largest animal on Earth?",
+        "answers": [
+            "Jellyfish",
+            "Whale",
+            "Elephant",
+            "Blue Whale"
+        ],
+        "correct": "Blue Whale"
+    },
+    {
+        "question": "Which animal has the longest lifespan among reptiles?",
+        "answers": [
+            "Camel",
+            "Turtle",
+            "Crocodile",
+            "Panda"
+        ],
+        "correct": "Turtle"
+    },
+    {
+        "question": "Which bird is the largest in the world?",
+        "answers": [
+            "Hippopotamus",
+            "Leopard",
+            "Ostrich",
+            "Platypus"
+        ],
+        "correct": "Ostrich"
+    },
+    {
+        "question": "Which animal is famous for building dams?",
+        "answers": [
+            "Flamingo",
+            "Bear",
+            "Beaver",
+            "Donkey"
+        ],
+        "correct": "Beaver"
+    },
+    {
+        "question": "Which sea animal has eight arms?",
+        "answers": [
+            "Octopus",
+            "Parrot",
+            "Falcon",
+            "Jellyfish"
+        ],
+        "correct": "Octopus"
+    },
+    {
+        "question": "Which mammal lays eggs instead of giving birth?",
+        "answers": [
+            "Bat",
+            "Chameleon",
+            "Rabbit",
+            "Platypus"
+        ],
+        "correct": "Platypus"
+    },
+    {
+        "question": "Which animal has the strongest bite force among land animals?",
+        "answers": [
+            "Tiger",
+            "Lion",
+            "Crocodile",
+            "Cheetah"
+        ],
+        "correct": "Crocodile"
+    },
+    {
+        "question": "Which bird is known for imitating human speech?",
+        "answers": [
+            "Parrot",
+            "Flamingo",
+            "Bat",
+            "Eagle"
+        ],
+        "correct": "Parrot"
+    },
+    {
+        "question": "Which animal is the only mammal covered in scales?",
+        "answers": [
+            "Pangolin",
+            "Crocodile",
+            "Chimpanzee",
+            "Snake"
+        ],
+        "correct": "Pangolin"
+    },
+    {
+        "question": "Which marine animal is considered the largest predator on Earth?",
+        "answers": [
+            "Octopus",
+            "Sperm Whale",
+            "Turtle",
+            "Shark"
+        ],
+        "correct": "Sperm Whale"
+    }
+]
+    </script>
+    <script src="../assets/scripts/questions.js" defer></script>
+</head>
+<body>
+    <nav class="infobar">
+        <button id="backbutton" onclick="location.href=`../`">Back</button>
+        <p id="progress">Level: -/20</p>
+
+    </nav>
+    <div class="mainbody">
+    <p id="qnum"></p><p id="mainqs">Click the next button to begin!</p>
+</div>
+
+<div id="results" >
+    <p id="resname">The Results</p>
+            <div class="info">
+            <p class="ysno" id="correct">Correct answers: 0</p>
+            <p class="ysno" id="skipped">Skipped questions: 0</p>
+            <p class="ysno" id="wrong">Wrong answers: 0</p>
+        </div>
+<button id="ok" onclick="location.href=`../`">Return</button>
+</div>
+
+<div class="answers">
+    <div>
+<button class="answerbutton" id="answer1" onclick="checkRightAnswer1()"></button>
+<button class="answerbutton" id="answer2" onclick="checkRightAnswer2()"></button>
+</div>
+<div>
+<button class="answerbutton" id="answer3" onclick="checkRightAnswer3()"></button>
+<button class="answerbutton" id="answer4" onclick="checkRightAnswer4()"></button>
+
+</div>
+<p id="yourAnswer"></p>
+</div>
+<div class="nextback">
+    <button id="back" onclick="BACKfUNCTION()">Back</button>
+
+<button id="finsh" onclick="FINSHfUNCTION()">Finsh</button>
+<button id="next" onclick="NEXTfUNCTION()">Next</button>
+
+
+</div>
+
+
+</div>
+</body>
+</html>

@@ -229,3 +229,13 @@ console.log(rightAnswers)
 rightAnswers = 0;
 wrongAnswers = 0;
 }
+/*
+var questionList = []
+for(let i = 0; i < questions.length; i++){
+    questionList.push({
+        "question": questions[i],
+        "answers": allQuestionAnswers[i],
+        "correct": answerList[i]
+    })
+}
+console.log(questionList) */
